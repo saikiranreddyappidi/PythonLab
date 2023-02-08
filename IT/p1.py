@@ -1,8 +1,13 @@
-Lists =[12, 75, 150, 180, 145, 525, 50]
-for i in Lists:
-	if i>500:
-		break
-	elif i>150:
-		continue
-	elif i%5==0:
-		print(i)
+def check(val:str):
+	if val == val[::-1]:
+		return True
+	else:
+		return False
+
+
+a=input("Enter a number: ")
+if check(a):
+	print("Palindrome")
+else:
+	print("Not a Palindrome")
+	

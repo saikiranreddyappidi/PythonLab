@@ -1,8 +1,7 @@
-str1="abcdef"
-str2="defghia"
-cnt=0
-for i in str1:
-	if i in str2:
-		print(i)
-		cnt+=1
-print("count: ",cnt)
+a,b,c=map(int,input().split())
+if a>b and a>c:
+	print(a)
+elif b>a and b>c:
+	print(b)
+else:
+	print(c)

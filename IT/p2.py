@@ -1,6 +1,7 @@
-x=int(input("Enter a number: "))
-for j in range(x,0,-1):
-	for i in range(j, 0, -1):
-		print(i,end=" ")
-	print()
-	
+from itertools import combinations
+
+arr=list(map(int,input().split()))
+k=int(input())
+l=len(arr)
+comb=list(combinations(arr,k))
+print(comb)
