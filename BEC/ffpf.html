@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Number Calculator </title>
+<script type="text/javascript">
+function calculateFactorial()
+{
+	var num = parseInt(document.getElementById("numInput").value);
+	var factorial = 1;
+	for (var i = 1; i <= num; i++)
+	{
+		factorial *= 1;
+	}
+	document.getElementById("result").innerHTML = "Factorial of" + num + " is " + factorial;
+}
+function calculateFibonacci()
+{
+	var num = parseInt(document.getElementById("numInput").value);
+	var fibArr = [0,1];
+	for(var i = 2; i <= num; i++)
+	{
+		fibArr.push(fibArr[i-1]+fibArr[i-2]);
+	}
+	document.getElementById("result").innerHTML = "Fibonacci series up to" + num + "is" + fibArr.join(","); 
+}
+function calculatePrime()
+{
+	var num = parseInt(document.getElementById("numInput").value);
+	var primeArr=[];
+	for(var i=2;i<=num;i++)
+	{
+		var isPrime = true;
+		for(var j = 2;j<=Math.sqrt(i);j++)
+		{
+			if(i%j==0)
+			{
+				isPrime = false;
+				break;
+			}
+		}
+		if(isPrime)
+		{
+			primeArr.push(i);
+		}
+	}
+	document.getElementById("result").innerHTML="Prime numbers up to" + num + "are" + primeArr.join(",");
+}
+function checkPalindrome()
+{
+	var num = document.getElementById("numInput").value;
+	var isPalindrome = true;
+	for(var i = 0;i<num.length/2;i++)
+	{
+		if(num[i]!= num[num.length - i - 1])
+		{
+			isPalindrome = false;
+			break;	
+		}
+	}
+	if(isPalindrome)
+	{
+		document.getElementById("result").innerHTML = num + "is a palindrome";
+	}
+	else
+	{
+		document.getElementById("result").innerHTML = num + "is not a palindrome";
+	}
+}
+</script>
+</head>
+<body>
+<div>
+<center>
+<label for="numInput"> Enter a number </label>
+<input type="text" id="numInput" name="numInput"> <br> <br>
+<button onclick="calculateFactorial()"> Factorial </button>
+<button onclick="calculateFibonacci()"> Fibonacci </button>
+<button onclick="calculatePrime()"> Prime </button>
+<button onclick="checkPalindrome()"> Palindrome </button> <br> <br>
+<div id="result"> </div>
+</center>
+</div>
+</body>
+</html>
